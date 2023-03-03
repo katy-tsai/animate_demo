@@ -1,0 +1,145 @@
+$spacies: (
+  '0': 0px,
+  '5': 5px,
+  '8': 8px,
+  '10': 10px,
+  '12': 12px,
+  '15': 15px,
+  '20': 20px,
+  '30': 30px,
+  '35': 35px,
+  '40': 40px,
+  '45': 45px,
+  '50': 50px,
+  '60': 60px,
+  'auto': auto,
+);
+$grid-breakpoints: (
+  '': false,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+);
+$property: 'm', 'p';
+$sides: '', 't', 'b', 'l', 'r', 'x', 'y';
+
+@mixin generate($pro, $side, $spacValue) {
+  @if $side == '' {
+    @if $pro == 'm' {
+      margin: $spacValue !important;
+    }
+    @if $pro == 'p' {
+      padding: $spacValue !important;
+    }
+  }
+  @if $side == 't' {
+    @if $pro == 'm' {
+      margin-top: $spacValue !important;
+    }
+    @if $pro == 'p' {
+      padding-top: $spacValue !important;
+    }
+  }
+  @if $side == 'b' {
+    @if $pro == 'm' {
+      margin-bottom: $spacValue !important;
+    }
+    @if $pro == 'p' {
+      padding-bottom: $spacValue !important;
+    }
+  }
+  @if $side == 'l' {
+    @if $pro == 'm' {
+      margin-left: $spacValue !important;
+    }
+    @if $pro == 'p' {
+      padding-left: $spacValue !important;
+    }
+  }
+  @if $side == 'r' {
+    @if $pro == 'm' {
+      margin-right: $spacValue !important;
+    }
+    @if $pro == 'p' {
+      padding-right: $spacValue !important;
+    }
+  }
+  @if $side == 'x' {
+    @if $pro == 'm' {
+      margin-left: $spacValue !important;
+      margin-right: $spacValue !important;
+    }
+    @if $pro == 'p' {
+      padding-left: $spacValue !important;
+      padding-right: $spacValue !important;
+    }
+  }
+  @if $side == 'y' {
+    @if $pro == 'm' {
+      margin-top: $spacValue !important;
+      margin-bottom: $spacValue !important;
+    }
+    @if $pro == 'p' {
+      padding-top: $spacValue !important;
+      padding-bottom: $spacValue !important;
+    }
+  }
+}
+
+@each $key, $value in $grid-breakpoints {
+  @if not $value {
+    @each $pro in $property {
+      @each $side in $sides {
+        @each $spacKey, $spacValue in $spacies {
+          .#{$pro}#{$side}-#{$spacKey} {
+            @include generate($pro, $side, $spacValue);
+          }
+        }
+      }
+    }
+  } @else {
+    @media screen and (min-width: $value) {
+      @each $pro in $property {
+        @each $side in $sides {
+          @each $spacKey, $spacValue in $spacies {
+            .#{$pro}#{$side}-#{$key}-#{$spacKey} {
+              @include generate($pro, $side, $spacValue);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.mr--1{
+  margin-right: -1px;
+}
+.ml--1{
+  margin-left: -1px;
+}
+.mt--1{
+  margin-top: -1px;
+}
+.mt--10{
+  margin-top: -10px;
+}
+.mb--1{
+  margin-bottom: -1px;
+}
+.mb--30{
+  margin-bottom: -30px;
+}
+.mb--20{
+  margin-bottom: -20px;
+}
+.lh-25{
+  line-height: 25px;
+}
+.lh-30{
+  line-height: 30px;
+}
+.lh-35{
+  line-height: 35px;
+}
