@@ -5,15 +5,16 @@
   height: 100%;
   height: 100vh;
   .header{
-    background: #CFCFEA;
-    color:#4E598C;
+    background: #4E598C;
+    color:#CFCFEA;
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.5rem;
+    font-weight: 700;
     padding: 10px;
     line-height: 30px;
   }
   .main-container{
-    background: #4E598C;
+    background: #CFCFEA;
     flex: 1;
     .main{
       padding: 10px ;

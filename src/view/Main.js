@@ -5,9 +5,9 @@ const Main = () => {
   return (
     <Tabs>
       <TabList>
-        <Tab>css animate</Tab>
-        <Tab>svg animate</Tab>
-        <Tab>canvas animate</Tab>
+        <Tab>CSS</Tab>
+        <Tab>SVG</Tab>
+        <Tab>CANVAS</Tab>
       </TabList>
 
       <TabPanel>Any content 1</TabPanel>
