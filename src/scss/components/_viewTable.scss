@@ -1,0 +1,156 @@
+$view_goup_label_color: #81B9E9;
+$view_div_bgc: #232735;
+$view_div_box_shadow:  0px 2px 4px rgba(0, 0, 0, 0.1);;
+
+
+$viewSize: (
+  '1':(width:100%),
+  '2':(width:50%),
+  '4':(width:25%),
+  '5':(width:20%),
+  '8':(width:12.5%),
+  '10':(width:10%),
+);
+
+
+.view_table_div {
+  width: 100%;
+
+  * {
+    box-sizing: border-box;
+
+  }
+
+  &.w16_h9 {
+    .card-body {
+      --w: 16;
+      --h: 9;
+    }
+  }
+  &.view_detial{
+    .view_card{
+      flex: 0 0 100% ;
+      transition: 0.3s;
+    }
+    .pagination-div-right{
+      display: none;
+    }
+   
+  }
+
+  .view_gropu_div {
+    width: 100%;
+
+    .view_goup_label {
+      color: $view_goup_label_color;
+    }
+
+    .view_goup_sublabel {
+      font-size: 0.9rem;
+    }
+
+    .view_case {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+
+     
+
+      .view_card {
+        list-style: none;
+        margin: 0;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // flex: 0 0 25%;
+        box-sizing: border-box;
+       
+
+        li {
+          margin: 0;
+          display: flex;
+          &:nth-child(1){
+            flex:1;
+          }
+
+        }
+
+        .card-body {
+          position: relative;
+          width: 100%;
+
+          margin-bottom: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &:before {
+            content: '';
+            width: 100%;
+            padding-top: calc(var(--h) * 100% / var(--w));
+            display: block;
+          }
+
+          .view_div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $view_div_bgc;
+            box-shadow: $view_div_box_shadow;
+
+          }
+
+          .thumbnail_img_div,
+          .view_div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            // background-color: #fff;
+            border-radius: 5px;
+
+            // min-height: 360;
+            img {
+              max-height: 100%;
+              max-width: 100%;
+              border-radius: 5px;
+              width: auto;
+              height: auto;
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              margin: auto;
+
+            }
+
+          
+          }
+
+
+        }
+
+      }
+    }
+  }
+
+  @each $i,
+  $value in $viewSize {
+    &:not(.view_detial){
+      .flex_width_#{$i} {
+        flex: 0 0 map-get($value, width);
+      }
+    }
+     
+    }
+  
+}
+
+@media (max-width: 720px) {
+  [class*='flex_width_'] {
+    flex: 0 0 100% !important;
+  }
+}

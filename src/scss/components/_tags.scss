@@ -1,0 +1,35 @@
+.tag_span{
+    padding: 5px 10px;
+    border-radius: 5px ;
+    color:#dcd9d9;
+    background-image: linear-gradient(45deg,#777777, #666);
+    font-size: 0.9rem;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+
+    &.R{
+      color:#fff;
+      background-image: linear-gradient(45deg,#DC052E, #f50531);
+    }
+
+    &.O{
+      color:#fff;
+      background-image: linear-gradient(45deg,#ff6b00, #F68658); 
+    }
+    &.B{
+        color:#fff;
+        background-image: linear-gradient(45deg,#179BD5, #1282b3);
+    }
+    &.G{
+      color:#fff;
+      background-image: linear-gradient(45deg,#0ea8a7, #098282); 
+    }
+    &.Y{
+        color:#fff;
+        background-image: linear-gradient(45deg,#F1DC50, #FFCC2B); 
+    }
+    &.P{
+        color:#fff;
+        background-image: linear-gradient(45deg,#A481D5, #8a6db3);  
+    }
+}

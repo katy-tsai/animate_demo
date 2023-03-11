@@ -1,5 +1,6 @@
 import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import CssView from "./cssView/CssView"; 
 
 const Main = () => {
   return (
@@ -10,7 +11,7 @@ const Main = () => {
         <Tab>CANVAS</Tab>
       </TabList>
 
-      <TabPanel>Any content 1</TabPanel>
+      <TabPanel><CssView/></TabPanel>
       <TabPanel>Any content 2</TabPanel>
       <TabPanel>Any content 3</TabPanel>
     </Tabs>

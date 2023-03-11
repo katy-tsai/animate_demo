@@ -1,0 +1,18 @@
+[
+    {
+        "component":"Demo",
+        "tags":["G:box-shadow","P:test"]
+    },
+    {
+        "component":"",
+        "tags":["test"]
+    },
+    {
+        "component":"Demo",
+        "tags":["box-shadow"]
+    },
+    {
+        "component":"",
+        "tags":["test"]
+    }
+]
