@@ -1,4 +1,4 @@
-[
+export const cssData = [
     {
         "component": "Demo",
         "tags": [
@@ -28,3 +28,6 @@
         ]
     }
 ]
+
+export const svgData = [];
+export const canvasData = [];
