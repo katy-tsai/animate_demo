@@ -4,6 +4,9 @@
 @import "core/spacing";
 @import "core/font";
 @import "lib/react-tabs.scss";
+@import "lib/github-markdown-dark.scss";
+@import "lib/github-markdown-light.scss";
+@import "lib/github-markdown.scss";
 @import "components/_layout";
 @import "components/_viewTable";
 @import "components/_pagination";
@@ -11,3 +14,4 @@
 @import "components/_tags";
 @import "view/_main";
 @import "../components/cssDemo/demo/_demo";
+@import "../components//cssDemo/triangle/_trangle.css";

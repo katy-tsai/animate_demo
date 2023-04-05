@@ -1,9 +1,11 @@
 import * as data from '../data/data';
+let domain = 'https://raw.githubusercontent.com/katy-tsai/animate_demo/main/src/';
+
 
 export const fatchMdData = async (type, name) => {
     name = name?.toLowerCase() || "";
     if (name) {
-        let response = await fetch(`../../components/${type}Demo/${name}.md`);
+        let response = await fetch(`${domain}/components/${type}Demo/${name}/${name}.md`);
         const data = response.text() || "";
         return data;
     } else {

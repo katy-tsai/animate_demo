@@ -10,10 +10,16 @@
         }
     },
     {
-        "component": "",
+        "component": "Triangle",
         "tags": [
-            "test"
-        ]
+            "G:border",
+            "R:三角形"
+        ],
+        "props": {
+            "color": "#ca9292",
+            "type": "bottom",
+            "size": "50"
+        }
     },
     {
         "component": "Demo",
